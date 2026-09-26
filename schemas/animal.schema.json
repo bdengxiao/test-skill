@@ -1,0 +1,240 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Test Skill Animal",
+  "type": "object",
+  "required": [
+    "species",
+    "nodes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "species": {
+      "type": "string"
+    },
+    "nodes": {
+      "type": "array",
+      "maxItems": 200,
+      "items": {
+        "$ref": "#/$defs/node"
+      }
+    }
+  },
+  "$defs": {
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tag",
+        "attrs"
+      ],
+      "properties": {
+        "tag": {
+          "enum": [
+            "g",
+            "path",
+            "circle",
+            "ellipse",
+            "rect",
+            "line",
+            "polyline",
+            "polygon"
+          ]
+        },
+        "attrs": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "d": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "cx": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "cy": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "r": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "rx": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "ry": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "x": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "y": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "x1": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "x2": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "y1": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "y2": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "width": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "height": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "points": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "fill": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "stroke": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "stroke-width": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "stroke-linecap": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "stroke-linejoin": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "opacity": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "transform": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "data-anchor": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "data-origin": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "data-bend": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "data-profile": {
+              "enum": [
+                "joint",
+                "wing"
+              ]
+            }
+          }
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/node"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "tag": {
+                "not": {
+                  "const": "g"
+                }
+              }
+            }
+          },
+          "then": {
+            "not": {
+              "required": [
+                "children"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

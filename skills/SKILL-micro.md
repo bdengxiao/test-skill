@@ -1,0 +1,1 @@
+Reuse the bike rig. Follow the contract; output only animal SVG/JSON. Preserve species morphology and visible hand/pedal contacts. Minimize elements after correctness. Record original attempts and actual usage; unknown scores stay null.

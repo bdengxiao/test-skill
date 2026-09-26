@@ -1,0 +1,4 @@
+interface:
+  display_name: "Test Skill"
+  short_description: "Compare compact SVG animal animations across models"
+  default_prompt: "运行 $test-skill：直接完成鹈鹕、猫、章鱼首轮生成、结构评分和历史保存，自动打开独立浏览器大窗口；不要询问参数。"

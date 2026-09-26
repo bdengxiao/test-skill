@@ -1,0 +1,17 @@
+{
+  "name": "test-skill",
+  "version": "0.3.1",
+  "private": true,
+  "type": "module",
+  "description": "SVG animation capability per token",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "test": "node --test tests/*.test.js",
+    "test:visual": "node tests/visual.js",
+    "benchmark": "node scripts/run-benchmark.js",
+    "aggregate": "node scripts/aggregate-results.js"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}
